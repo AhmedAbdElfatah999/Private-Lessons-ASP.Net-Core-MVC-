@@ -1,0 +1,57 @@
+<!--which type of the model to use it's data -->
+@model IEnumerable<PrivateLessons.Models.users>
+@{Layout=null;}
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <link rel="icon" href="images/favicon.png"/>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet"> 
+        <!-- Custom styles for this template -->
+        <link href="Logincss/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="container">
+                <h1>Sign In</h1>
+                 <h5>Please Enter A Valid User Name And Password.</h5>
+                <form class="form" asp-controller="Login">
+                    <input type="text" placeholder="User name" name="xusername" >
+                    <input type="password" placeholder="Password" name="xpassword">
+                    <button type="submit" id="login-button">Login</button><br><br>
+                    <button type="submit" id="login-button" asp-action="Create">Create New Account</button><br><br>
+                     <button type="submit" id="login-button"><a href="https://localhost:5001"  style="text-decoration:none;color: #53e3a6;">Back To Home Page</a></button>
+                </form>
+                
+            </div>
+
+            <ul class="bg-bubbles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+
+        </div>
+
+        <script>
+            $("#login-button").click(function (event) {
+                event.preventDefault();
+
+                $('form').fadeOut(500);
+                $('.wrapper').addClass('form-success');
+            });
+        </script>
+    </body>
+</html>

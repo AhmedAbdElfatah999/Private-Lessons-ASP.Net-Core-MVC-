@@ -1,0 +1,67 @@
+@model PrivateLessons.Models.users
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+
+<div>
+    <h4>User</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.username)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(user => user.username)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.password)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.password)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.f_name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.f_name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.l_name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.l_name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.email)
+        </dd>
+        <dt class = "col-sm-2">
+          <h3>You are :</h3>
+        </dt>
+        <dd class = "col-sm-10">
+
+            @if(Model.type_id==1){
+                 <h3>Admin</h3>
+            }else if(Model.type_id==2){
+                  <h3>Teacher</h3>
+            }else{
+                <h3>Student</h3>
+            }
+            
+        </dd>
+    </dl>
+</div>
+<div>
+   
+    <a asp-action="Index">Back to List</a>
+</div>
+</body>
+</html>
